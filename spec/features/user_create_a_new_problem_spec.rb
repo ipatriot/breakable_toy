@@ -10,15 +10,14 @@ feature 'a citizen report a new problem', %Q{
   # [ ] - I want to simply click the type of problem in a radio box
   # [ ] - I want to be geotagged where I am!
 
-  user = FactoryGirl.create(:user)
+  scenario 'user marks down a new problem' do
+    visit new_problem_path
 
-  sign_in(user)
-  expect(page).to have_content('Signed in successfully')
+    find('#Baches').set(true)
+    fill_in 'Location', with: "Cuajimalpa"
 
-  visit "/"
+    click_button 'Create Problem'
 
-  choose('Bache')
-
-  expect(page).to have_content("Problema Notado")s
-
+    expect(page).to have_content("problem successfully posted!")
+  end
 end

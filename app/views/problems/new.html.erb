@@ -1,0 +1,41 @@
+<h1>Submit a Problem!</h1>
+
+<%= form_for(@problem) do |f| %>
+
+  <div class="field">
+    <%= f.radio_button :name, "Basura"%>
+    <%= f.label :name, "Basura" %>
+    <%= f.radio_button :name, "Baches", id: "Baches" %>
+    <%= f.label :name, "Baches" %>
+  </div>
+
+  <div class="field">
+    <%= f.radio_button :name, "Falta de Luz Pública" %>
+    <%= f.label :name, "Falta de Luz Pública" %>
+    <%= f.radio_button :name, "Basura en la calle" %>
+    <%= f.label :name, "Basura en la calle" %>
+  </div>
+
+  <div class="field">
+    <%= f.radio_button :name, "Cables Cruzados" %>
+    <%= f.label :name, "Cables Cruzados" %>
+    <%= f.radio_button :name, "No hay electricidad" %>
+    <%= f.label :name, "No hay electricidad" %>
+  </div>
+
+  <div class="field">
+    <%= f.radio_button :name, "Limpiar la calle" %>
+    <%= f.label :name, "Limpiar la calle" %>
+    <%= f.radio_button :name, "Falta de agua" %>
+    <%= f.label :name, "Falta de agua" %>
+  </div>
+
+  <div class="field">
+   <%= f.label :location %><br>
+   <%= f.text_field :location %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
