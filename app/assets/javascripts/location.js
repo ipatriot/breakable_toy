@@ -11,9 +11,14 @@ function geoFindMe() {
     var latitude  = position.coords.latitude;
     var longitude = position.coords.longitude;
 
+    // $.ajax({
+    //   method: "POST",
+    //   url: ("/problems/new"),
+    //   data: { latitude: latitude, longitude: longitude },
+    //   dataType: "json"
+    // })
+
     output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
-
-
   };
 
   function error() {

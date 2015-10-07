@@ -14,13 +14,14 @@ class ProblemsController < ApplicationController
       flash[:notice] = "Please submit the field correctly!"
       redirect_to :back
     end
+
   end
 
 
   private
 
   def problem_params
-      params.require(:problem).permit(:name, :location)
-    end
+      params.require(:problem).permit(:name, :latitude, :longitude)
+  end
 
 end
