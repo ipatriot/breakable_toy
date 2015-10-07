@@ -14,10 +14,21 @@ feature 'a citizen report a new problem', %Q{
     visit new_problem_path
 
     find('#Baches').set(true)
-    fill_in 'Location', with: "Cuajimalpa"
 
     click_button 'Create Problem'
 
     expect(page).to have_content("problem successfully posted!")
+
+  end
+
+  scenario 'user does not mark a problem, but clicks submit' do
+    visit new_problem_path
+
+    fill_in 'Latitude', with: "23.54534234"
+    fill_in 'Longitude', with: "134.23123213"
+
+    click_button 'Create Problem'
+
+    expect(page).to have_content("Please submit the field correctly!")
   end
 end

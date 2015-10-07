@@ -31,11 +31,21 @@
   </div>
 
   <div class="field">
-   <%= f.label :location %><br>
-   <%= f.text_field :location %>
+   <%= f.label :latitude %><br>
+   <%= f.text_field :latitude %>
+  </div>
+
+  <div class="field">
+   <%= f.label :longitude %><br>
+   <%= f.text_field :longitude %>
   </div>
 
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>
+
+
+<p><button onclick="geoFindMe()">Show my location</button></p>
+<div id="out"></div>
