@@ -1,0 +1,8 @@
+<h1> Problems </h1>
+<ul>
+<% @problems.each do |problem| %>
+  <li> <%= problem.name %>||<%= problem.latitude %> <%= problem.longitude%> </li>
+<% end %>
+</ul>
+
+<a href = "/problems/new">Create a new problem</a>
