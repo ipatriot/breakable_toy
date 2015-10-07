@@ -1,6 +1,3 @@
-// when I click a radio button
-  // find the value of the button
-  // call geoFindMe(button_value)
 
 $('.radio_button').on("click", function(event) {
   problem = $(this).text()
@@ -26,8 +23,9 @@ function geoFindMe(problem) {
       data: { "problem": { name: problem, latitude: latitude, longitude: longitude } },
       dataType: "json"
     })
+    window.location.href = "/";
 
-    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+    // output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
   };
 
   function error() {
