@@ -16,26 +16,3 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
-
-$('new_problem').on("radio_button", function(event) {
-  event.preventDefault();
-  debugger
-  alert("success")
-
-}
-
-// $('.action').on("#submit-button", function(event) {
-//   alert("success");
-//   // event.preventDefault();
-//   //
-//   // var submitNewOption = function(option) {
-//   //   $.ajax({
-//   //     method: "POST",
-//   //     url: "/problems/new",
-//   //     data: { option: option }
-//   //   }).success(function(){
-//   //     alert("success")
-//   //   });
-//   // }
-//
-// };

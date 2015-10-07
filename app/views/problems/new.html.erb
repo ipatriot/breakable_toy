@@ -2,49 +2,49 @@
 
 <%= form_for(@problem) do |f| %>
 
-  <div class="field" onclick="geoFindMe()" id="radio_button">
+  <p class="radio_button" >
     <%= f.radio_button :name, "Basura"%>
     <%= f.label :name, "Basura" %>
+  </p>
+  <p class="radio_button" >
     <%= f.radio_button :name, "Baches", id: "Baches" %>
     <%= f.label :name, "Baches" %>
-  </div>
+  </p>
 
-  <div class="field" onclick="geoFindMe()" id="radio_button">
+  <p class="radio_button"  >
     <%= f.radio_button :name, "Falta de Luz Pública" %>
     <%= f.label :name, "Falta de Luz Pública" %>
+  </p>
+  <p class="radio_button" >
     <%= f.radio_button :name, "Basura en la calle" %>
     <%= f.label :name, "Basura en la calle" %>
-  </div>
+  </p>
 
-  <div class="field" onclick="geoFindMe()" id="radio_button">
+  <p class="radio_button"  >
     <%= f.radio_button :name, "Cables Cruzados" %>
     <%= f.label :name, "Cables Cruzados" %>
+  </p>
+  <p class="radio_button" >
     <%= f.radio_button :name, "No hay electricidad" %>
     <%= f.label :name, "No hay electricidad" %>
-  </div>
+  </p>
 
-  <div class="field" onclick="geoFindMe()" id="radio_button">
+
+  <p class="radio_button"  >
     <%= f.radio_button :name, "Limpiar la calle" %>
     <%= f.label :name, "Limpiar la calle" %>
+  </p>
+    <p class="radio_button" >
     <%= f.radio_button :name, "Falta de agua" %>
     <%= f.label :name, "Falta de agua" %>
-  </div>
-
-  <div class="field">
-   <%= f.label :latitude %><br>
-   <%= f.text_field :latitude %>
-  </div>
-
-  <div class="field" >
-   <%= f.label :longitude %><br>
-   <%= f.text_field :longitude %>
-  </div>
+  </p>
 
   <div class="actions" id="submit-button">
     <%= f.submit %>
   </div>
 
 <% end %>
+
 
 
 <div id="out"></div>
