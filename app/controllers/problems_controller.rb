@@ -4,6 +4,12 @@ class ProblemsController < ApplicationController
     @problems = Problem.all
   end
 
+  def show
+    @problem = Problem.find(params[:id])
+    # render json: @problem
+    render json: {problem: @problem}
+  end
+
   def new
     @problem = Problem.new
   end
