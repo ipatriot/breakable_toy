@@ -8,11 +8,19 @@ function initialize() {
   };
   var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
+  pathName = window.location.pathname;
 
-// How to make this data pass autmatically from the controller to the javascript??
- var newMapData = {"id":1,"name":"\n    \n    Falta de agua\n  ","created_at":"2015-10-07T22:33:33.302Z","updated_at":"2015-10-07T22:33:33.302Z","latitude":"42.3518161","longitude":"-71.0611098"}
- var LatLong = {lat: parseFloat(newMapData["latitude"]), lng: parseFloat(newMapData["longitude"])};
- var nameOfProblem = newMapData["name"];
+
+  $.ajax({
+    url: pathName,
+    method: 'GET',
+    dataType: 'json'
+  }).done(function(problem){
+
+   var problem = problem;
+
+   var LatLong = {lat: parseFloat(problem.latitude), lng: parseFloat(problem.longitude)};
+   var nameOfProblem = problem.name;
 
     var marker = new google.maps.Marker({
      position: LatLong,
@@ -26,6 +34,6 @@ function initialize() {
    var infowindow = new google.maps.InfoWindow({
      content: nameOfProblem
    });
-
+ })
 }
 google.maps.event.addDomListener(window, 'load', initialize);

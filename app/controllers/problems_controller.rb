@@ -7,7 +7,11 @@ class ProblemsController < ApplicationController
   def show
     @problem = Problem.find(params[:id])
     # render json: @problem
-    render json: {problem: @problem}
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @problem }
+    end
   end
 
   def new
