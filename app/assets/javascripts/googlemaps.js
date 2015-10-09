@@ -26,7 +26,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
 function geocodeLatLng(geocoder, map, infowindow, problem) {
    var latlng = {lat: parseFloat(problem.latitude), lng: parseFloat(problem.longitude)};
    geocoder.geocode({'location': latlng}, function(results, status) {
-     debugger;
      if (status === google.maps.GeocoderStatus.OK) {
        if (results[1]) {
          map.setZoom(14);
@@ -34,8 +33,18 @@ function geocodeLatLng(geocoder, map, infowindow, problem) {
            position: latlng,
            map: map
          });
+           debugger;
          infowindow.setContent("Problema: " + problem.name + ", Dirección: " + results[0].formatted_address);
          infowindow.open(map, marker);
+        //  ajax call to send the address to the controller!
+
+         $.ajax({
+           method: "PATCH",
+           url: ("/problems"),
+           data: { "problem": { address: results[0].formatted_address } },
+           dataType: "json"
+         })
+
        } else {
          window.alert('No results found');
        }
@@ -44,3 +53,9 @@ function geocodeLatLng(geocoder, map, infowindow, problem) {
      }
    });
  }
+
+ // $.ajax({
+ //   method: "POST",
+ //   url: ("/problems"),
+ //   data:{}
+ // })

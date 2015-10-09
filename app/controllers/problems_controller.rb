@@ -6,7 +6,6 @@ class ProblemsController < ApplicationController
 
   def show
     @problem = Problem.find(params[:id])
-    # render json: @problem
 
     respond_to do |format|
       format.html
@@ -31,11 +30,35 @@ class ProblemsController < ApplicationController
     end
   end
 
+  def edit
+    @problem = Problem.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @problem }
+    end
+
+    @problem = Problem.find(params[:id])
+  end
+
+  def update
+    @problem = Problem.find(params[:id])
+
+    if @problem.update_attributes(problem_params)
+      # binding.pry
+      flash[:notice] = "You have successfully edited this question!"
+      redirect_to problem_path(@problem)
+    else
+      flash[:notice] = "Please fill out the field correctly!"
+      redirect_to :back
+    end
+  end
+
 
   private
 
   def problem_params
-      params.require(:problem).permit(:name, :latitude, :longitude)
+      params.require(:problem).permit(:name, :latitude, :longitude, :address)
   end
 
 end
