@@ -20,6 +20,7 @@ class ProblemsController < ApplicationController
 
   def create
     @problem = Problem.new(problem_params)
+    # binding.pry
 
     if @problem.save
       flash[:notice] = "problem successfully posted!"

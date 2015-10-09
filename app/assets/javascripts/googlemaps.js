@@ -7,33 +7,40 @@ function initialize() {
     mapTypeId:google.maps.MapTypeId.ROADMAP
   };
   var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+  var geocoder = new google.maps.Geocoder;
+  var infoWindow = new google.maps.InfoWindow;
 
   pathName = window.location.pathname;
-
 
   $.ajax({
     url: pathName,
     method: 'GET',
     dataType: 'json'
-  }).done(function(problem){
-
-   var problem = problem;
-
-   var LatLong = {lat: parseFloat(problem.latitude), lng: parseFloat(problem.longitude)};
-   var nameOfProblem = problem.name;
-
-    var marker = new google.maps.Marker({
-     position: LatLong,
-     map: map,
-     title: nameOfProblem
-    });
-   marker.addListener('click', function() {
-     infowindow.open(map, marker);
-   });
-
-   var infowindow = new google.maps.InfoWindow({
-     content: nameOfProblem
-   });
- })
+  })
+  .done(function(problem){
+   geocodeLatLng(geocoder, map, infoWindow, problem);
+ });
 }
 google.maps.event.addDomListener(window, 'load', initialize);
+
+function geocodeLatLng(geocoder, map, infowindow, problem) {
+   var latlng = {lat: parseFloat(problem.latitude), lng: parseFloat(problem.longitude)};
+   geocoder.geocode({'location': latlng}, function(results, status) {
+     debugger;
+     if (status === google.maps.GeocoderStatus.OK) {
+       if (results[1]) {
+         map.setZoom(14);
+         var marker = new google.maps.Marker({
+           position: latlng,
+           map: map
+         });
+         infowindow.setContent("Problema: " + problem.name + ", Dirección: " + results[0].formatted_address);
+         infowindow.open(map, marker);
+       } else {
+         window.alert('No results found');
+       }
+     } else {
+       window.alert('Geocoder failed due to: ' + status);
+     }
+   });
+ }

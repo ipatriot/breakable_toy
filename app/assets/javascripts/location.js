@@ -24,7 +24,7 @@ function geoFindMe(problem) {
       dataType: "json"
     })
     window.location.href = "/";
-
+    // get the id of the next thing we want, to go to!
     // output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
   };
 
