@@ -3,7 +3,12 @@
 <%= form_for @problem do |f| %>
 
   <%= f.label :address %>
-  <%= f.text_field :address %>
+  <%= f.text_field :address, value: @problem.address %>
+
+  <div class="actions">
+   <%= f.submit('Confirmar Dirección') %>
+ </div>
+
 
 <% end %>
 

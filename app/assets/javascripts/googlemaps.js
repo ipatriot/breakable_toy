@@ -42,8 +42,6 @@ function geocodeLatLng(geocoder, map, infowindow, problem, pathName) {
         test.pop()
         var path = test.join("/")
 
-
-        debugger;
          $.ajax({
            method: "PATCH",
            url: path,
@@ -59,9 +57,3 @@ function geocodeLatLng(geocoder, map, infowindow, problem, pathName) {
      }
    });
  }
-
- // $.ajax({
- //   method: "POST",
- //   url: ("/problems"),
- //   data:{}
- // })

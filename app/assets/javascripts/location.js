@@ -25,7 +25,6 @@ function geoFindMe(problem) {
     }).done(function(problem){
       window.location.href = "/problems/" + problem.id + "/edit";
     })
-    // window.location.href = "/";
     // get the id of the next thing we want, to go to!
     // output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
   };
