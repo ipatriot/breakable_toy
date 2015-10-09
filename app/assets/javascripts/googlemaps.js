@@ -18,12 +18,12 @@ function initialize() {
     dataType: 'json'
   })
   .done(function(problem){
-   geocodeLatLng(geocoder, map, infoWindow, problem);
+   geocodeLatLng(geocoder, map, infoWindow, problem, pathName);
  });
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 
-function geocodeLatLng(geocoder, map, infowindow, problem) {
+function geocodeLatLng(geocoder, map, infowindow, problem, pathName) {
    var latlng = {lat: parseFloat(problem.latitude), lng: parseFloat(problem.longitude)};
    geocoder.geocode({'location': latlng}, function(results, status) {
      if (status === google.maps.GeocoderStatus.OK) {
@@ -33,14 +33,20 @@ function geocodeLatLng(geocoder, map, infowindow, problem) {
            position: latlng,
            map: map
          });
-           debugger;
+         var address = results[0].formatted_address
          infowindow.setContent("Problema: " + problem.name + ", Dirección: " + results[0].formatted_address);
          infowindow.open(map, marker);
         //  ajax call to send the address to the controller!
+        pathName
+        var test = pathName.split("/")
+        test.pop()
+        var path = test.join("/")
 
+
+        debugger;
          $.ajax({
            method: "PATCH",
-           url: ("/problems"),
+           url: path,
            data: { "problem": { address: results[0].formatted_address } },
            dataType: "json"
          })

@@ -22,8 +22,10 @@ function geoFindMe(problem) {
       url: ("/problems"),
       data: { "problem": { name: problem, latitude: latitude, longitude: longitude } },
       dataType: "json"
+    }).done(function(problem){
+      window.location.href = "/problems/" + problem.id + "/edit";
     })
-    window.location.href = "/";
+    // window.location.href = "/";
     // get the id of the next thing we want, to go to!
     // output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
   };
