@@ -49,6 +49,7 @@ class ProblemsController < ApplicationController
   end
 
   def update
+
     @problem = Problem.find(params[:id])
 
     if @problem.update_attributes(problem_params)

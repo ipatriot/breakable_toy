@@ -42,12 +42,14 @@ function geocodeLatLng(geocoder, map, infowindow, problem, pathName) {
         test.pop()
         var path = test.join("/")
 
+        $('#problem_address').val(results[0].formatted_address)
+
          $.ajax({
            method: "PATCH",
            url: path,
            data: { "problem": { address: results[0].formatted_address } },
            dataType: "json"
-         })
+         });
 
        } else {
          window.alert('No results found');

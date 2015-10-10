@@ -1,17 +1,13 @@
 <h1>Edit <%= @problem.name %></h1>
 
 <%= form_for @problem do |f| %>
+  <div class="edit_box" >
+    <%= f.label :address %>
+    <%= f.text_field :address, value: @problem.address %>
+  </div>
 
-  <%= f.label :address %>
-  <%= f.text_field :address, value: @problem.address %>
-
-  <div class="actions">
-   <%= f.submit('Confirmar Dirección') %>
- </div>
-
-
+    <%= f.submit "Confirmar Dirección" %>
 <% end %>
-
 
 <script src="http://maps.googleapis.com/maps/api/js?AIzaSyBiyb2C93xxfnwykQ-9JL4mtEI0xduf21Q"></script>
 

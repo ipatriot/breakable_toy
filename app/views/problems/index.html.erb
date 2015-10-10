@@ -1,7 +1,8 @@
 <h1> Problems </h1>
 <ul>
 <% @problems.each do |problem| %>
-  <li> <%= problem.name %>||<%= problem.latitude %> <%= problem.longitude%> </li>
+    <li><%=link_to problem.name, problem_path(problem.id) %></li>
+ <%= problem.address %>||<%= problem.latitude %> <%= problem.longitude%> </li>
 <% end %>
 </ul>
 
