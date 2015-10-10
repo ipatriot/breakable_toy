@@ -2,42 +2,56 @@
 
 <%= form_for(@problem) do |f| %>
 
-  <p class="radio_button" >
-    <%= f.radio_button :name, "Basura"%>
-    <%= f.label :name, "Basura" %>
-  </p>
-  <p class="radio_button" >
-    <%= f.radio_button :name, "Baches", id: "Baches" %>
-    <%= f.label :name, "Baches" %>
-  </p>
+  <table border="1">
+    <tr>
+      <td class= "radio_button">
+        <%= f.radio_button :name, "Basura"%>
+        <%= f.label :name, "Basura" %>
+      </td>
 
-  <p class="radio_button"  >
-    <%= f.radio_button :name, "Falta de Luz Pública" %>
-    <%= f.label :name, "Falta de Luz Pública" %>
-  </p>
-  <p class="radio_button" >
-    <%= f.radio_button :name, "Basura en la calle" %>
-    <%= f.label :name, "Basura en la calle" %>
-  </p>
+      <td class= "radio_button">
+        <%= f.radio_button :name, "Bache"%>
+        <%= f.label :name, "Bache" %>
+      </td>
+    </tr>
 
-  <p class="radio_button"  >
-    <%= f.radio_button :name, "Cables Cruzados" %>
-    <%= f.label :name, "Cables Cruzados" %>
-  </p>
-  <p class="radio_button" >
-    <%= f.radio_button :name, "No hay electricidad" %>
-    <%= f.label :name, "No hay electricidad" %>
-  </p>
 
-  <p class="radio_button"  >
-    <%= f.radio_button :name, "Limpiar la calle" %>
-    <%= f.label :name, "Limpiar la calle" %>
-  </p>
-    <p class="radio_button" >
-    <%= f.radio_button :name, "Falta de agua" %>
-    <%= f.label :name, "Falta de agua" %>
-  </p>
+    <tr>
+      <td class= "radio_button">
+        <%= f.radio_button :name, "Falta de Luz Pública" %>
+        <%= f.label :name, "Falta de Luz Pública" %>
+      </td>
 
+      <td class= "radio_button">
+        <%= f.radio_button :name, "Basura en la calle" %>
+        <%= f.label :name, "Basura en la calle" %>
+      </td>
+    </tr>
+
+    <tr>
+      <td class= "radio_button">
+        <%= f.radio_button :name, "Cables Cruzados" %>
+        <%= f.label :name, "Cables Cruzados" %>
+      </td>
+
+      <td class= "radio_button">
+        <%= f.radio_button :name, "No hay electricidad" %>
+        <%= f.label :name, "No hay electricidad" %>
+      </td>
+    </tr>
+
+    <tr>
+      <td class= "radio_button">
+        <%= f.radio_button :name, "Limpiar la calle" %>
+        <%= f.label :name, "Limpiar la calle" %>
+      </td>
+
+      <td class= "radio_button">
+        <%= f.radio_button :name, "Falta de agua" %>
+        <%= f.label :name, "Falta de agua" %>
+      </td>
+    </tr>
+  </table>
 <% end %>
 
 <a href="/problems">Problems</a>
