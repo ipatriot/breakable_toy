@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.2.1'
+
 group :test do
   gem 'coveralls', require: false
 end
@@ -17,6 +19,10 @@ gem 'devise'
 gem 'foundation-rails'
 gem 'pry'
 gem 'textacular', '~> 3.0'
+
+group :production do
+  gem 'rails_12factor'
+end
 
 group :development, :test do
   gem 'byebug'
