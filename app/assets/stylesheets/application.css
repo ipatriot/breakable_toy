@@ -15,9 +15,9 @@
  *= require foundation_and_overrides
 
  */
-/*color que me gusta #B1311B*/
+/*color que me gusta #B1311B  #182C42*/
 
 .radio_button {
-  background-color: #182C42;
+  background-color: #dadada;
   color: #D85B36;
 }

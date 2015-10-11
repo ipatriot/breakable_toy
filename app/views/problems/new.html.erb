@@ -1,57 +1,54 @@
 <h1>Submit a Problem!</h1>
 
+
+
 <%= form_for(@problem) do |f| %>
 
-  <table border="1">
-    <tr>
-      <td class= "radio_button">
+
+  <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+      <li class= "radio_button">
         <%= f.radio_button :name, "Basura"%>
         <%= f.label :name, "Basura" %>
-      </td>
+      </li>
 
-      <td class= "radio_button">
+      <li class= "radio_button">
         <%= f.radio_button :name, "Bache"%>
         <%= f.label :name, "Bache" %>
-      </td>
-    </tr>
+      </li>
 
-
-    <tr>
-      <td class= "radio_button">
+      <li class= "radio_button">
         <%= f.radio_button :name, "Falta de Luz Pública" %>
         <%= f.label :name, "Falta de Luz Pública" %>
-      </td>
+      </li>
 
-      <td class= "radio_button">
+      <li class= "radio_button">
         <%= f.radio_button :name, "Basura en la calle" %>
         <%= f.label :name, "Basura en la calle" %>
-      </td>
-    </tr>
+      </li>
 
-    <tr>
-      <td class= "radio_button">
+      <li class= "radio_button">
         <%= f.radio_button :name, "Cables Cruzados" %>
         <%= f.label :name, "Cables Cruzados" %>
-      </td>
+      </li>
 
-      <td class= "radio_button">
+      <li class= "radio_button">
         <%= f.radio_button :name, "No hay electricidad" %>
         <%= f.label :name, "No hay electricidad" %>
-      </td>
-    </tr>
+      </li>
 
-    <tr>
-      <td class= "radio_button">
+
+
+      <li class= "radio_button">
         <%= f.radio_button :name, "Limpiar la calle" %>
         <%= f.label :name, "Limpiar la calle" %>
-      </td>
+      </li>
 
-      <td class= "radio_button">
+      <li class= "radio_button">
         <%= f.radio_button :name, "Falta de agua" %>
         <%= f.label :name, "Falta de agua" %>
-      </td>
-    </tr>
-  </table>
+      </li>
+  </ul>
+
 <% end %>
 
 <a href="/problems">Problems</a>
