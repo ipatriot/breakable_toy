@@ -6,7 +6,7 @@
     <%= f.text_field :address, value: @problem.address %>
   </div>
 
-    <%= f.submit "Confirmar Dirección" %>
+    <%= f.submit "Confirmar Dirección", class: "confirm_address"%>
 <% end %>
 
 <script src="http://maps.googleapis.com/maps/api/js?[GOOGLE_MAPS_KEY]"></script>

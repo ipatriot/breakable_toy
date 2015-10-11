@@ -19,7 +19,6 @@ class ProblemsController < ApplicationController
 
   def create
     @problem = Problem.new(problem_params)
-
     if @problem.save
       respond_to do |format|
         format.html do

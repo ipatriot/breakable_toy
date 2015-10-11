@@ -51,6 +51,7 @@ function initMap() {
 function geocodeAddress(geocoder, resultsMap) {
 
   var address = document.getElementById('address').value;
+  debugger;
   geocoder.geocode({'address': address}, function(results, status) {
     if (status === google.maps.GeocoderStatus.OK) {
       resultsMap.setCenter(results[0].geometry.location);
@@ -58,6 +59,9 @@ function geocodeAddress(geocoder, resultsMap) {
         map: resultsMap,
         position: results[0].geometry.location
       });
+
+
+      debugger;
     } else {
       alert('Geocode was not successful for the following reason: ' + status);
     }
@@ -65,7 +69,7 @@ function geocodeAddress(geocoder, resultsMap) {
 }
 
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiyb2C93xxfnwykQ-9JL4mtEI0xduf21Q&signed_in=true&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?igned_in=true&callback=initMap"
         async defer></script>
   </body>
 </html>

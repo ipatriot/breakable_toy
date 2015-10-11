@@ -42,14 +42,28 @@ function geocodeLatLng(geocoder, map, infowindow, problem, pathName) {
         test.pop();
         var path = test.join("/");
 
+
+
         $('#problem_address').val(results[0].formatted_address);
 
-         $.ajax({
-           method: "PATCH",
-           url: path,
-           data: { "problem": { address: results[0].formatted_address } },
-           dataType: "json"
-         });
+
+        var geotag_location_address = results[0].formatted_address;
+
+        $('.confirm_address').on("click", function(event) {
+        var search_box_address = $('#problem_address').val();
+          if (geotag_location_address == search_box_address) {
+             $.ajax({
+               method: "PATCH",
+               url: path,
+               data: { "problem": { address: results[0].formatted_address } },
+               dataType: "json"
+             })
+          } else if (geotag_location_address != search_box_address) {
+        
+            geocodeAddress(geocoder, map, search_box_address, infowindow, pathName);
+          }
+        });
+
 
        } else {
          window.alert('No results found');
@@ -61,10 +75,7 @@ function geocodeLatLng(geocoder, map, infowindow, problem, pathName) {
  }
 
 
- function geocodeAddress(geocoder, resultsMap) {
-
-   var address = $('#problem_address').val();
-   debugger;
+ function geocodeAddress(geocoder, resultsMap, address, infoWindow, pathName) {
    geocoder.geocode({'address': address}, function(results, status) {
      if (status === google.maps.GeocoderStatus.OK) {
        resultsMap.setCenter(results[0].geometry.location);
@@ -72,6 +83,19 @@ function geocodeLatLng(geocoder, map, infowindow, problem, pathName) {
          map: resultsMap,
          position: results[0].geometry.location
        });
+
+       pathName;
+       var test = pathName.split("/");
+       test.pop();
+       var path = test.join("/");
+
+       $.ajax({
+         method: "PATCH",
+         url: path,
+         data: { "problem": { latitude: results[0].geometry.location.J, longitude: results[0].geometry.location.M, address: results[0].formatted_address } },
+         dataType: "json"
+       })
+
      } else {
        alert('Geocode was not successful for the following reason: ' + status);
      }
