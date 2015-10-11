@@ -37,12 +37,12 @@ function geocodeLatLng(geocoder, map, infowindow, problem, pathName) {
          infowindow.setContent("Problema: " + problem.name + ", Dirección: " + results[0].formatted_address);
          infowindow.open(map, marker);
         //  ajax call to send the address to the controller!
-        pathName
-        var test = pathName.split("/")
-        test.pop()
-        var path = test.join("/")
+        pathName;
+        var test = pathName.split("/");
+        test.pop();
+        var path = test.join("/");
 
-        $('#problem_address').val(results[0].formatted_address)
+        $('#problem_address').val(results[0].formatted_address);
 
          $.ajax({
            method: "PATCH",
@@ -56,6 +56,24 @@ function geocodeLatLng(geocoder, map, infowindow, problem, pathName) {
        }
      } else {
        window.alert('Geocoder failed due to: ' + status);
+     }
+   });
+ }
+
+
+ function geocodeAddress(geocoder, resultsMap) {
+
+   var address = $('#problem_address').val();
+   debugger;
+   geocoder.geocode({'address': address}, function(results, status) {
+     if (status === google.maps.GeocoderStatus.OK) {
+       resultsMap.setCenter(results[0].geometry.location);
+       var marker = new google.maps.Marker({
+         map: resultsMap,
+         position: results[0].geometry.location
+       });
+     } else {
+       alert('Geocode was not successful for the following reason: ' + status);
      }
    });
  }
