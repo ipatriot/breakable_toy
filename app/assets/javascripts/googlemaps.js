@@ -33,6 +33,7 @@ function geocodeLatLng(geocoder, map, infowindow, problem, pathName) {
            position: latlng,
            map: map
          });
+
          var address = results[0].formatted_address
          infowindow.setContent("Problema: " + problem.name + ", Dirección: " + results[0].formatted_address);
          infowindow.open(map, marker);
@@ -59,7 +60,7 @@ function geocodeLatLng(geocoder, map, infowindow, problem, pathName) {
                dataType: "json"
              })
           } else if (geotag_location_address != search_box_address) {
-        
+
             geocodeAddress(geocoder, map, search_box_address, infowindow, pathName);
           }
         });
