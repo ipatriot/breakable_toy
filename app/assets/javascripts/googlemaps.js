@@ -56,7 +56,7 @@ function geocodeLatLng(geocoder, map, infowindow, problem, pathName) {
              $.ajax({
                method: "PATCH",
                url: path,
-               data: { "problem": { address: results[0].formatted_address } },
+               data: { "problem": { address: results[0].formatted_address, edit_status: true } },
                dataType: "json"
              })
           } else if (geotag_location_address != search_box_address) {
@@ -93,7 +93,7 @@ function geocodeLatLng(geocoder, map, infowindow, problem, pathName) {
        $.ajax({
          method: "PATCH",
          url: path,
-         data: { "problem": { latitude: results[0].geometry.location.J, longitude: results[0].geometry.location.M, address: results[0].formatted_address } },
+         data: { "problem": { latitude: results[0].geometry.location.J, longitude: results[0].geometry.location.M, address: results[0].formatted_address, edit_status: true } },
          dataType: "json"
        })
 

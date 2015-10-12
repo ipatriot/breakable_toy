@@ -19,6 +19,7 @@ class ProblemsController < ApplicationController
 
   def create
     @problem = Problem.new(problem_params)
+
     if @problem.save
       respond_to do |format|
         format.html do
@@ -38,25 +39,34 @@ class ProblemsController < ApplicationController
 
   def edit
     @problem = Problem.find(params[:id])
+    if @problem.edit_status == false
 
-    respond_to do |format|
-      format.html
-      format.json { render json: @problem }
+      respond_to do |format|
+        format.html
+        format.json { render json: @problem }
+      end
+
+      @problem = Problem.find(params[:id])
+    else
+      flash[:notice] = "This problem has already been reported"
+      redirect_to problem_path(@problem)
     end
-
-    @problem = Problem.find(params[:id])
   end
 
   def update
-
     @problem = Problem.find(params[:id])
-
-    if @problem.update_attributes(problem_params)
-      flash[:notice] = "You have successfully edited this question!"
-      redirect_to problem_path(@problem)
+    if @problem.edit_status == false
+      if @problem.update_attributes(problem_params)
+        flash[:notice] = "You have successfully edited this question!"
+        redirect_to problem_path(@problem)
+      else
+        flash[:notice] = "Please fill out the field correctly!"
+        redirect_to :back
+      end
     else
-      flash[:notice] = "Please fill out the field correctly!"
-      redirect_to :back
+      # binding.pry
+      flash[:notice] = "This problem has already been reported"
+      redirect_to problem_path(@problem)
     end
   end
 
@@ -64,7 +74,7 @@ class ProblemsController < ApplicationController
   private
 
   def problem_params
-      params.require(:problem).permit(:name, :latitude, :longitude, :address)
+      params.require(:problem).permit(:name, :latitude, :longitude, :address, :edit_status)
   end
 
 end
