@@ -15,14 +15,22 @@
  *= require foundation_and_overrides
 
  */
-/*color que me gusta #B1311B  #182C42 #128CBD #FFA338*/
+/*colores que me gustan #B1311B  #182C42 #128CBD #FFA338 #E84E7F #FFE8F0 #AC18E8 #CFE1FF #4E3F99*/
+
+/************** New page, buttons! *******************************/
 
 .radio_button {
-  background-color: #dadada;
+  background-color: #E3E0F6;
   color: #D85B36;
 }
 
+
+/************** Index page, info! *******************************/
 .each_problem {
-  background-color: #09bd21;
-  border: 1px;
+  background-color: #BAB0FF;
+  border: 10px;
+}
+
+.title_of_problem {
+  font-size: 2vw;
 }

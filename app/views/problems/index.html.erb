@@ -1,24 +1,24 @@
 
 <div class="row">
-  <ol class="medium-3 columns">
+  <div class="medium-4 columns">
 <h1> Problemas </h1>
   <% @problems.each do |problem| %>
     <div class="each_problem">
-      <li><%=link_to problem.name, problem_path(problem.id) %></li>
-   <%= problem.address %>||<%= problem.latitude %> <%= problem.longitude%> </li>
+      <div class="title_of_problem"><%=link_to problem.name, problem_path(problem.id) %> </div>
+   <div><%= problem.address %>||<%= problem.latitude %> <%= problem.longitude%></div>
    </div>
   <% end %>
-  </ol>
+</div>
 
   <a href = "/problems/new">Create a new problem</a>
 
   insert a map with all the markers!!
-    <div class="medium-6 columns">
+    <div class="medium-4 columns">
       <h1> Mapa </h1>
     <script src="http://maps.googleapis.com/maps/api/js?ENV[GOOGLE_MAPS_KEY]"></script>
 
     <div class="the_map" id="googleMap" style="width:600px;height:520px;"></div>
 
   </div>
-  <div class="medium-3 columns">3 columns</div>
+  <div class="medium-4 columns">3 columns</div>
 </div>
