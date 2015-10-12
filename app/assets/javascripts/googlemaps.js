@@ -21,20 +21,20 @@ function initialize() {
 
     if (pathName == "/problems") {
     // entonces poner markers (buscar en google maps api esa funcion)
-    for(var i = 0; i < problem.length; ++i){
-      var address = problem[i].address;
-      var name_of_prob = problem[i].name;
-      var latlng = {lat: parseFloat(problem[i].latitude), lng: parseFloat(problem[i].longitude)};
-      // debugger;
-        var marker = new google.maps.Marker({
-       position: latlng,
-       map: map,
-       title: "Problema: " + name_of_prob + ", Dirección: " + address
-      });
-      var infowindow = new google.maps.InfoWindow({
-        content: "Problema: " + name_of_prob + ", Dirección: " + address
-      });
-      infowindow.open(map, marker);
+      for(var i = 0; i < problem.length; ++i){
+        var address = problem[i].address;
+        var name_of_prob = problem[i].name;
+        var latlng = {lat: parseFloat(problem[i].latitude), lng: parseFloat(problem[i].longitude)};
+        // debugger;
+          var marker = new google.maps.Marker({
+         position: latlng,
+         map: map,
+         title: "Problema: " + name_of_prob + ", Dirección: " + address
+        });
+        var infowindow = new google.maps.InfoWindow({
+          content: "Problema: " + name_of_prob + ", Dirección: " + address
+        });
+        infowindow.open(map, marker);
     }
     } else {
    geocodeLatLng(geocoder, map, infoWindow, problem, pathName);
@@ -72,6 +72,8 @@ function geocodeLatLng(geocoder, map, infowindow, problem, pathName) {
 
         $('.confirm_address').on("click", function(event) {
         var search_box_address = $('#problem_address').val();
+        debugger;
+
           if (geotag_location_address == search_box_address) {
              $.ajax({
                method: "PATCH",
@@ -82,6 +84,7 @@ function geocodeLatLng(geocoder, map, infowindow, problem, pathName) {
           } else if (geotag_location_address != search_box_address) {
 
             geocodeAddress(geocoder, map, search_box_address, infowindow, pathName);
+
           }
         });
 
@@ -100,10 +103,12 @@ function geocodeLatLng(geocoder, map, infowindow, problem, pathName) {
    geocoder.geocode({'address': address}, function(results, status) {
      if (status === google.maps.GeocoderStatus.OK) {
        resultsMap.setCenter(results[0].geometry.location);
+      
        var marker = new google.maps.Marker({
          map: resultsMap,
          position: results[0].geometry.location
        });
+
 
        pathName;
        var test = pathName.split("/");

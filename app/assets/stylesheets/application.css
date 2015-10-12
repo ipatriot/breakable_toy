@@ -15,9 +15,14 @@
  *= require foundation_and_overrides
 
  */
-/*color que me gusta #B1311B  #182C42*/
+/*color que me gusta #B1311B  #182C42 #128CBD #FFA338*/
 
 .radio_button {
   background-color: #dadada;
   color: #D85B36;
+}
+
+.each_problem {
+  background-color: #09bd21;
+  border: 1px;
 }
