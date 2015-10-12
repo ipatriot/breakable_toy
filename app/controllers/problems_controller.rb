@@ -1,5 +1,7 @@
 class ProblemsController < ApplicationController
+    # before_action :require_login
 
+    before_action :authenticate_user!, except: [:show, :edit, :create, :new, :update]
   def index
     @problems = Problem.all
   end

@@ -18,6 +18,9 @@ function initialize() {
     dataType: 'json'
   })
   .done(function(problem){
+    //if pathname = problems
+    // entonces poner markers (buscar en google maps api esa funcion)
+    //else hacer lo de geocodeLatLng
    geocodeLatLng(geocoder, map, infoWindow, problem, pathName);
  });
 }
