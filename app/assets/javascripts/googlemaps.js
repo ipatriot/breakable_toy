@@ -18,10 +18,27 @@ function initialize() {
     dataType: 'json'
   })
   .done(function(problem){
-    //if pathname = problems
+
+    if (pathName == "/problems") {
     // entonces poner markers (buscar en google maps api esa funcion)
-    //else hacer lo de geocodeLatLng
+    for(var i = 0; i < problem.length; ++i){
+      var address = problem[i].address;
+      var name_of_prob = problem[i].name;
+      var latlng = {lat: parseFloat(problem[i].latitude), lng: parseFloat(problem[i].longitude)};
+      // debugger;
+        var marker = new google.maps.Marker({
+       position: latlng,
+       map: map,
+       title: "Problema: " + name_of_prob + ", Dirección: " + address
+      });
+      var infowindow = new google.maps.InfoWindow({
+        content: "Problema: " + name_of_prob + ", Dirección: " + address
+      });
+      infowindow.open(map, marker);
+    }
+    } else {
    geocodeLatLng(geocoder, map, infoWindow, problem, pathName);
+  }
  });
 }
 google.maps.event.addDomListener(window, 'load', initialize);
