@@ -121,7 +121,9 @@ function geocodeLatLng(geocoder, map, infowindow, problem, pathName) {
        $.ajax({
          method: "PATCH",
          url: path,
-         data: { "problem": { latitude: results[0].geometry.location.lat(), longitude: results[0].geometry.location.lng(), address: results[0].formatted_address, edit_status: true } },
+         data: { "problem": { latitude: results[0].geometry.location.lat(),
+                longitude: results[0].geometry.location.lng(),
+                address: results[0].formatted_address, edit_status: true } },
          dataType: "json"
        })
 
