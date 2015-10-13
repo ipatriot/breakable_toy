@@ -9,7 +9,7 @@
     <%= f.submit "Confirmar Dirección", class: "confirm_address"%>
 <% end %>
 
-<script src="http://maps.googleapis.com/maps/api/js?ENV[GOOGLE_MAPS_KEY]"></script>
+<script src="http://maps.googleapis.com/maps/api/js?<%= ENV['GOOGLE_MAPS_KEY'] %>"></script>
 
 <div class="the_map" id="googleMap" style="width:800px;height:520px;"></div>
 

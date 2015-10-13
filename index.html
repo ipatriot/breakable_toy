@@ -1,4 +1,4 @@
-un concepto donde le agregas un boolean a la tabla,
+<!-- un concepto donde le agregas un boolean a la tabla,
 y si es false se puede visitar el editing
 cuando se crea un problem, automaticamente se vuelve false, default value
 y si es true no se puede visitar
@@ -7,81 +7,80 @@ para que no se pueda volver a visitar la pagina
 
 asi, solo se puede visitar esa pagina una vez, se podra hacer esto?
 despues que el admin user pueda modificar, pero solo el completion state o no!
+ -->
 
 
+ <!DOCTYPE html>
+ <html>
+   <head>
+     <title>Geocoding service</title>
+     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+     <meta charset="utf-8">
+     <style>
+       html, body {
+         height: 100%;
+         margin: 0;
+         padding: 0;
+       }
+       #map {
+         height: 100%;
+       }
+ #floating-panel {
+   position: absolute;
+   top: 10px;
+   left: 25%;
+   z-index: 5;
+   background-color: #fff;
+   padding: 5px;
+   border: 1px solid #999;
+   text-align: center;
+   font-family: 'Roboto','sans-serif';
+   line-height: 30px;
+   padding-left: 10px;
+ }
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Geocoding service</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-        height: 100%;
-      }
-#floating-panel {
-  position: absolute;
-  top: 10px;
-  left: 25%;
-  z-index: 5;
-  background-color: #fff;
-  padding: 5px;
-  border: 1px solid #999;
-  text-align: center;
-  font-family: 'Roboto','sans-serif';
-  line-height: 30px;
-  padding-left: 10px;
-}
+     </style>
+   </head>
+   <body>
+     <div id="floating-panel">
+       <input id="address" type="textbox" value="Sydney, NSW">
+       <input id="submit" type="button" value="Geocode">
+     </div>
+     <div id="map"></div>
+     <script>
+ function initMap() {
+   var map = new google.maps.Map(document.getElementById('map'), {
+     zoom: 14,
+     center: {lat: -34.397, lng: 150.644}
+   });
+   var geocoder = new google.maps.Geocoder();
 
-    </style>
-  </head>
-  <body>
-    <div id="floating-panel">
-      <input id="address" type="textbox" value="Sydney, NSW">
-      <input id="submit" type="button" value="Geocode">
-    </div>
-    <div id="map"></div>
-    <script>
-function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 14,
-    center: {lat: -33.8650, lng: 151.2094}
-  });
-  var geocoder = new google.maps.Geocoder();
+   document.getElementById('submit').addEventListener('click', function() {
+     debugger;
+     geocodeAddress(geocoder, map);
+   });
+ }
 
-  document.getElementById('submit').addEventListener('click', function() {
-    geocodeAddress(geocoder, map);
-  });
-}
+ function geocodeAddress(geocoder, resultsMap) {
+   var address = document.getElementById('address').value;
+   debugger;
+   geocoder.geocode({'address': address}, function(results, status) {
+     if (status === google.maps.GeocoderStatus.OK) {
+       resultsMap.setCenter(results[0].geometry.location);
+       debugger;
+       var marker = new google.maps.Marker({
+         map: resultsMap,
+         position: results[0].geometry.location
+       });
+       debugger;
+     } else {
+       alert('Geocode was not successful for the following reason: ' + status);
+     }
+   });
+ }
 
-function geocodeAddress(geocoder, resultsMap) {
-
-  var address = document.getElementById('address').value;
-  debugger;
-  geocoder.geocode({'address': address}, function(results, status) {
-    if (status === google.maps.GeocoderStatus.OK) {
-      resultsMap.setCenter(results[0].geometry.location);
-      var marker = new google.maps.Marker({
-        map: resultsMap,
-        position: results[0].geometry.location
-      });
-
-
-      debugger;
-    } else {
-      alert('Geocode was not successful for the following reason: ' + status);
-    }
-  });
-}
-
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?igned_in=true&callback=initMap"
-        async defer></script>
-  </body>
-</html>
+     </script>
+     <script src="https://maps.googleapis.com/maps/api/js?key=&signed_in=true&callback=initMap"
+         async defer></script>
+   </body>
+ </html>
