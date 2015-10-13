@@ -1,6 +1,7 @@
 
 $('.radio_button').on("click", function(event) {
-  problem = $(this).text()
+  event.preventDefault();
+  problem = $(this).text();
   geoFindMe(problem)
 });
 
@@ -16,6 +17,7 @@ function geoFindMe(problem) {
   function success(position) {
     var latitude  = position.coords.latitude;
     var longitude = position.coords.longitude;
+    debugger;
 
     $.ajax({
       method: "POST",
@@ -24,8 +26,10 @@ function geoFindMe(problem) {
       dataType: "json"
     }).done(function(problem){
       window.location.href = "/problems/" + problem.id + "/edit";
+
     })
     // get the id of the next thing we want, to go to!
+
     // output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
   };
 
@@ -34,6 +38,7 @@ function geoFindMe(problem) {
   };
 
   output.innerHTML = "<p>Locating…</p>";
+
 
   navigator.geolocation.getCurrentPosition(success, error);
 }
