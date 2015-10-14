@@ -9,78 +9,79 @@ asi, solo se puede visitar esa pagina una vez, se podra hacer esto?
 despues que el admin user pueda modificar, pero solo el completion state o no!
  -->
 
+<style>
+.card {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  -webkit-perspective: 5000;
+  perspective: 5000;
+}
 
- <!DOCTYPE html>
- <html>
-   <head>
-     <title>Geocoding service</title>
-     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-     <meta charset="utf-8">
-     <style>
-       html, body {
-         height: 100%;
-         margin: 0;
-         padding: 0;
-       }
-       #map {
-         height: 100%;
-       }
- #floating-panel {
-   position: absolute;
-   top: 10px;
-   left: 25%;
-   z-index: 5;
-   background-color: #fff;
-   padding: 5px;
-   border: 1px solid #999;
-   text-align: center;
-   font-family: 'Roboto','sans-serif';
-   line-height: 30px;
-   padding-left: 10px;
- }
+.card .container {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
 
-     </style>
-   </head>
-   <body>
-     <div id="floating-panel">
-       <input id="address" type="textbox" value="Sydney, NSW">
-       <input id="submit" type="button" value="Geocode">
-     </div>
-     <div id="map"></div>
-     <script>
- function initMap() {
-   var map = new google.maps.Map(document.getElementById('map'), {
-     zoom: 14,
-     center: {lat: -34.397, lng: 150.644}
-   });
-   var geocoder = new google.maps.Geocoder();
+.card .container .front, .card .container .back {
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
 
-   document.getElementById('submit').addEventListener('click', function() {
-     debugger;
-     geocodeAddress(geocoder, map);
-   });
- }
+.card .container .front .row, .card .container .front .column, .card .container .front .columns, .card .container .back .row, .card .container .back .column, .card .container .back .columns {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
 
- function geocodeAddress(geocoder, resultsMap) {
-   var address = document.getElementById('address').value;
-   debugger;
-   geocoder.geocode({'address': address}, function(results, status) {
-     if (status === google.maps.GeocoderStatus.OK) {
-       resultsMap.setCenter(results[0].geometry.location);
-       debugger;
-       var marker = new google.maps.Marker({
-         map: resultsMap,
-         position: results[0].geometry.location
-       });
-       debugger;
-     } else {
-       alert('Geocode was not successful for the following reason: ' + status);
-     }
-   });
- }
+.card .container .front {
+  z-index: 2;
+}
 
-     </script>
-     <script src="https://maps.googleapis.com/maps/api/js?key=&signed_in=true&callback=initMap"
-         async defer></script>
-   </body>
- </html>
+.card .container .back {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  overflow-y: scroll;
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.card .container:hover {
+  -webkit-transform: rotate3d(0, 1, 0, 180deg);
+  transform: rotate3d(0, 1, 0, 180deg);
+}
+
+.card .container {
+  border: solid 1px #eeeeee;
+}
+
+.card .container .front, .card .container .back {
+  padding: 1em;
+}
+
+.card.square .container {
+  width: 50%;
+  height: 0;
+  padding-bottom: 100%;
+}
+
+</style>
+ <div class="card">
+ 	<div class="container">
+ 		<div class="front">
+ 			<p> Problema y Direccion</p>
+ 		</div>
+
+ 		<div class="back">
+ 			<h5>This is a card.</h5>
+ 			<p>This card shows some content on the front and some on the back, and can be flipped by hovering on a desktop, or by swiping across on a touch device.</p>
+ 			<p>The back of the card is intentionally long, so that we can show both an example where the card is constrained to a square and where it is as long as the content on either side requires.</p>
+ 			<p>This card shows some content on the front and some on the back, and can be flipped by hovering on a desktop, or by swiping across on a touch device.</p>
+ 			<p>The back of the card is intentionally long, so that we can show both an example where the card is constrained to a square and where it is as long as the content on either side requires.</p>
+ 		</div>
+ 	</div>
+ </div>

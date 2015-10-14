@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require_tree .
+//= require googlemaps
+//= require location
+//= require self
 
 $(function(){ $(document).foundation(); });

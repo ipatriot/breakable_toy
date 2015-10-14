@@ -23,6 +23,7 @@
 .radio_button {
   background-color: #E3E0F6;
   color: #D85B36;
+  font-size: 3vw;
 }
 
 
@@ -39,3 +40,11 @@
 .address_of_problem {
   font-size: 1.4vw;
 }
+
+
+
+.small-block-grid-2 medium-block-grid-3 large-block-grid-4 { padding-bottom: 50%; }
+
+.small-block-grid-2 medium-block-grid-3 large-block-grid-4 { height:200px; }
+
+.small-block-grid-2 medium-block-grid-3 large-block-grid-4 { padding:40px 0; }

@@ -116,7 +116,7 @@ function geocodeLatLng(geocoder, map, infowindow, problem, pathName) {
        var test = pathName.split("/");
        test.pop();
        var path = test.join("/");
-       debugger;
+      //  debugger;
 
        $.ajax({
          method: "PATCH",
@@ -132,28 +132,3 @@ function geocodeLatLng(geocoder, map, infowindow, problem, pathName) {
      }
    });
  }
-
- //
- // function geocodeAddress(geocoder, resultsMap, address, infoWindow, pathName) {
- //     geocoder.geocode({'address': address}, function(results, status) {
- //       if (status === google.maps.GeocoderStatus.OK) {
- //         resultsMap.setCenter(results[0].geometry.location);
- //  @@ -72,6 +83,19 @@ function geocodeLatLng(geocoder, map, infowindow, problem, pathName) {
- //           map: resultsMap,
- //           position: results[0].geometry.location
- //         });
- // +
- // +       pathName;
- // +       var test = pathName.split("/");
- // +       test.pop();
- // +       var path = test.join("/");
- // +
- // +       $.ajax({
- // +         method: "PATCH",
- // +         url: path,
- // +         data: { "problem": { latitude: results[0].geometry.location.J, longitude: results[0].geometry.location.M, address: results[0].formatted_address } },
- // +         dataType: "json"
- // +       })
- // +
- //       } else {
- //         alert('Geocode was not successful for the following reason: ' + status);

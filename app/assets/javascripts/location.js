@@ -17,7 +17,6 @@ function geoFindMe(problem) {
   function success(position) {
     var latitude  = position.coords.latitude;
     var longitude = position.coords.longitude;
-    debugger;
 
     $.ajax({
       method: "POST",
