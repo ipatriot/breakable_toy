@@ -1,4 +1,4 @@
-"http://maps.googleapis.com/maps/api/js"
+"https://maps.googleapis.com/maps/api/js"
 
 function initialize() {
   var mapProp = {
