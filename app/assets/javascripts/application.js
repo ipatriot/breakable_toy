@@ -15,6 +15,6 @@
 //= require foundation
 //= require googlemaps
 //= require location
-//= require self
+//= require_self
 
 $(function(){ $(document).foundation(); });
