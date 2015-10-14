@@ -24,7 +24,6 @@ class ProblemsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @problem = Problem.new(problem_params)
 
     if @problem.save
@@ -33,7 +32,6 @@ class ProblemsController < ApplicationController
           flash[:notice] = "problem successfully posted!"
           redirect_to edit_problem_path(@problem)
         end
-        # binding.pry
         format.json { render json: @problem }
       end
     else
@@ -48,6 +46,7 @@ class ProblemsController < ApplicationController
   def edit
     @problem = Problem.find(params[:id])
     if @problem.edit_status == false
+
 
       respond_to do |format|
         format.html
@@ -64,7 +63,6 @@ class ProblemsController < ApplicationController
   def update
     @problem = Problem.find(params[:id])
       if @problem.update_attributes(problem_params)
-        # binding.pry
         flash[:notice] = "You have successfully edited this question!"
         redirect_to problem_path(@problem)
       else
