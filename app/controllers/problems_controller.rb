@@ -24,6 +24,7 @@ class ProblemsController < ApplicationController
   end
 
   def create
+    # binding.pry
     @problem = Problem.new(problem_params)
 
     if @problem.save
@@ -32,7 +33,8 @@ class ProblemsController < ApplicationController
           flash[:notice] = "problem successfully posted!"
           redirect_to edit_problem_path(@problem)
         end
-        format.json { render json: { status: 200 } }
+        binding.pry
+        format.json { render json: @problem }
       end
     else
       format.html do
