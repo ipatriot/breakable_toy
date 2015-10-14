@@ -21,7 +21,7 @@ function geoFindMe(problem) {
     $.ajax({
       method: "POST",
       url: ("/problems"),
-      data: { "problem": { name: problem, latitude: latitude, longitude: longitude } },
+      data: { "problem": { name: problem, latitude: latitude, longitude: longitude, edit_status: false } },
       dataType: "json"
     }).done(function(problem){
       window.location.href = "/problems/" + problem.id + "/edit";
