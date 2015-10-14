@@ -33,7 +33,7 @@ class ProblemsController < ApplicationController
           flash[:notice] = "problem successfully posted!"
           redirect_to edit_problem_path(@problem)
         end
-        binding.pry
+        # binding.pry
         format.json { render json: @problem }
       end
     else
