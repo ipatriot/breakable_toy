@@ -32,7 +32,7 @@ class ProblemsController < ApplicationController
           flash[:notice] = "problem successfully posted!"
           redirect_to edit_problem_path(@problem)
         end
-        format.json { render json: @problem }
+        format.json { render json: { status: 200 } }
       end
     else
       format.html do
