@@ -16,17 +16,26 @@
 
  */
 /*colores que me gustan #B1311B  #182C42 #128CBD #FFA338 #E84E7F #FFE8F0 #AC18E8 #CFE1FF #4E3F99 #FFC0B6 */
-/* #348AFF  #FF604D #1257B2 #347CFF #FF7CFF #E3E0F6 #f17104 #f19f05*/
+/* #348AFF  #FF604D #1257B2 #347CFF #FF7CFF #E3E0F6 #f17104 #f19f05 #5c35a4*/
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Poiret+One|Karla:400,700|Source+Code+Pro:400,700|Varela|Nixie+One|Love+Ya+Like+A+Sister|The+Girl+Next+Door|Anonymous+Pro:400,700|Codystar|Cutive+Mono|Raleway+Dots|Flamenco|NTR&subset=latin,latin-ext);
+
 
 /************** New page, buttons! *******************************/
+
+h1 {
+  font-size: 1.9rem;
+}
 
 .radio_button{
   background-color: #f19f05;
   height: 50vw;
-  padding: 2;
+  padding: 1em;
   border-top: 10px;
-  border: 1px solid white;
+  border: 3px solid white;
   text-align: center;
+
 }
 
 .radio_button:nth-child(3n+1) {
@@ -34,11 +43,11 @@
 }
 
 .radio_button:nth-child(3n+2) {
-  background-color: #AC18E8;
+  background-color: #ff149b;
 }
 
 .radio_image {
-  width: 70%;
+  width: 67%;
 }
 
 ul {
@@ -53,7 +62,9 @@ ul {
 
 .radio_button label {
   font-size: 6.2vw;
-  font-family: helvetica, sans-serif;
+  font-family: 'Varela', sans-serif;
+  color: black;
+  line-height: 110%;
 }
 
 .button {
