@@ -25,7 +25,8 @@
 /************** New page, buttons! *******************************/
 
 h1 {
-  font-size: 1.9rem;
+  font-size: 9.9vw;
+  font-family: 'Varela', 'Helvetica', sans-serif;
 }
 
 .radio_button{
