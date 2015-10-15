@@ -16,7 +16,7 @@
 
  */
 /*colores que me gustan #B1311B  #182C42 #128CBD #FFA338 #E84E7F #FFE8F0 #AC18E8 #CFE1FF #4E3F99 #FFC0B6 */
-/* #348AFF  #FF604D #1257B2 #347CFF #FF7CFF #E3E0F6 #f17104 */
+/* #348AFF  #FF604D #1257B2 #347CFF #FF7CFF #E3E0F6 #f17104 #f19f05*/
 
 /************** New page, buttons! *******************************/
 
@@ -25,6 +25,20 @@
   height: 50vw;
   padding: 2;
   border-top: 10px;
+  border: 1px solid white;
+  text-align: center;
+}
+
+.radio_button:nth-child(3n+1) {
+  background-color: #f17104;
+}
+
+.radio_button:nth-child(3n+2) {
+  background-color: #AC18E8;
+}
+
+.radio_image {
+  width: 70%;
 }
 
 ul {

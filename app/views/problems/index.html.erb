@@ -3,7 +3,7 @@
 
     <h1>Problemas</h1>
 
-    <% @problems.each do |problem| %>
+    <% @problems_to_complete.each do |problem| %>
       <div class="each_problem">
         <div class="title_of_problem">
           <%=link_to problem.name, problem_path(problem.id) %>
@@ -26,7 +26,7 @@
 
     <h1>Problemas</h1>
 
-    <% @problems.each do |problem| %>
+    <% @problems_to_complete.each do |problem| %>
       <div class="each_problem">
         <div class="title_of_problem">
           <%=link_to problem.name, problem_path(problem.id) %>

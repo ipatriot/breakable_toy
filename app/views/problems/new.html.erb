@@ -5,41 +5,50 @@
       <li class="radio_button column small-6">
         <%= f.radio_button :name, "Basura"%>
         <%= f.label :name, "Basura" %>
+        <%= image_tag("trash.png", alt: "trash", class:"radio_image") %>
       </li>
 
       <li class="radio_button column small-6">
         <%= f.radio_button :name, "Bache"%>
-        <%= f.label :name, "Bache" %>
+        <%= f.label :name, "Bache"%>
+        <%= image_tag("flat_tire.png", alt: "flat tire", class:"radio_image") %>
       </li>
 
       <li class="radio_button column small-6">
         <%= f.radio_button :name, "Falta de Luz Pública" %>
         <%= f.label :name, "Falta de Luz Pública" %>
+        <%= image_tag("public_light.png", alt: "public light", class:"radio_image") %>
+
       </li>
 
       <li class="radio_button column small-6">
         <%= f.radio_button :name, "Basura en la calle" %>
         <%= f.label :name, "Basura en la calle" %>
+        <%= image_tag("trash_on_street.png", alt: "trash on street", class:"radio_image") %>
       </li>
 
       <li class="radio_button column small-6">
         <%= f.radio_button :name, "Cables Cruzados" %>
         <%= f.label :name, "Cables Cruzados" %>
+        <%= image_tag("crossed_cables.png", alt: "crossed cables", class:"radio_image") %>
       </li>
 
       <li class="radio_button column small-6">
         <%= f.radio_button :name, "No hay electricidad" %>
         <%= f.label :name, "No hay electricidad" %>
+        <%= image_tag("light_out.png", alt: "light out", class:"radio_image") %>
       </li>
 
       <li class="radio_button column small-6">
         <%= f.radio_button :name, "Limpiar la calle" %>
         <%= f.label :name, "Limpiar la calle" %>
+        <%= image_tag("rake_trash.png", alt: "rake trash", class:"radio_image") %>
       </li>
 
       <li class="radio_button column small-6">
         <%= f.radio_button :name, "Falta de agua" %>
         <%= f.label :name, "Falta de agua" %>
+        <%= image_tag("desert.png", alt: "desert", class:"radio_image") %>
       </li>
   </ul>
 <% end %>
