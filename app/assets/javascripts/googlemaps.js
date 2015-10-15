@@ -73,7 +73,7 @@ function geocodeLatLng(geocoder, map, infowindow, problem, pathName) {
 
         var geotag_location_address = results[0].formatted_address;
 
-        $('.confirm_address').on("click", function(event) {
+        $('#confirm_address').on("click", function(event) {
         var search_box_address = $('#problem_address').val();
           if (geotag_location_address == search_box_address) {
              $.ajax({

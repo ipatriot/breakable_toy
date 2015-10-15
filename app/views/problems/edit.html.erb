@@ -1,15 +1,15 @@
-<h1>Edit <%= @problem.name %></h1>
+<h1>Confirma la Dirección o Cambia la Dirección</h1>
 
 <%= form_for @problem do |f| %>
   <div class="edit_box" >
-    <%= f.label :address %>
-    <%= f.text_field :address, value: @problem.address %>
+    <%= f.label :Dirección, class:"label_edit_field" %>
+    <%= f.text_field :address, value: @problem.address, class:"address_text_field" %>
   </div>
 
-    <%= f.submit "Confirmar Dirección", class: "confirm_address"%>
+    <%= f.submit "Confirmar Dirección", class:"button", id:"confirm_address" %>
 <% end %>
 
-<div class="the_map" id="googleMap" style="width:800px;height:520px;"></div>
+<div class="the_map" id="googleMap" style="width:100%;height:66%;"></div>
 
 
 
