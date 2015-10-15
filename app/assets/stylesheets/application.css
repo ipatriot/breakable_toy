@@ -24,11 +24,13 @@
   background-color: #f19f05;
   height: 50vw;
   padding: 2;
+  border-top: 10px;
 }
 
 ul {
   margin: 0;
   list-style: none;
+
 }
 
 .radio_button input {
@@ -37,11 +39,12 @@ ul {
 
 .radio_button label {
   font-size: 6.2vw;
+  font-family: helvetica, sans-serif;
 }
 
 .button {
   width: 100%;
-  height: 10%
+  font-size: 4vw;
 }
 
 .address_text_field {
@@ -65,4 +68,9 @@ ul {
 
 .address_of_problem {
   font-size: 1.4vw;
+}
+
+.problem-map {
+  width: 18rem;
+  height: 520px;
 }

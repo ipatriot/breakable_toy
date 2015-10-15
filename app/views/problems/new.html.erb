@@ -1,8 +1,6 @@
 <h1>¿Cuál es el problema?</h1>
 
 <%= form_for(@problem) do |f| %>
-
-
   <ul>
       <li class="radio_button column small-6">
         <%= f.radio_button :name, "Basura"%>
@@ -34,8 +32,6 @@
         <%= f.label :name, "No hay electricidad" %>
       </li>
 
-
-
       <li class="radio_button column small-6">
         <%= f.radio_button :name, "Limpiar la calle" %>
         <%= f.label :name, "Limpiar la calle" %>
@@ -46,7 +42,6 @@
         <%= f.label :name, "Falta de agua" %>
       </li>
   </ul>
-
 <% end %>
 
 <a href="/problems">Problems</a>

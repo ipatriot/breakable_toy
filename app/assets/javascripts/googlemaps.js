@@ -20,12 +20,11 @@ function initialize() {
   .done(function(problem){
 
     if (pathName == "/problems") {
-    // entonces poner markers (buscar en google maps api esa funcion)
     for(var i = 0; i < problem.length; ++i){
       var address = problem[i].address;
       var name_of_prob = problem[i].name;
       var latlng = {lat: parseFloat(problem[i].latitude), lng: parseFloat(problem[i].longitude)};
-      // debugger;
+
         var marker = new google.maps.Marker({
        position: latlng,
        map: map,
@@ -38,7 +37,7 @@ function initialize() {
       infowindow.open(map, marker);
 
     }
-      // debugger;
+
     } else {
    geocodeLatLng(geocoder, map, infoWindow, problem, pathName);
   }
@@ -60,16 +59,12 @@ function geocodeLatLng(geocoder, map, infowindow, problem, pathName) {
          var address = results[0].formatted_address
          infowindow.setContent("Problema: " + problem.name + ", Dirección: " + results[0].formatted_address);
          infowindow.open(map, marker);
-        //  ajax call to send the address to the controller!
         pathName;
         var test = pathName.split("/");
         test.pop();
         var path = test.join("/");
 
-
-
         $('#problem_address').val(results[0].formatted_address);
-
 
         var geotag_location_address = results[0].formatted_address;
 
@@ -88,7 +83,6 @@ function geocodeLatLng(geocoder, map, infowindow, problem, pathName) {
           }
         });
 
-
        } else {
          window.alert('No results found');
        }
@@ -100,23 +94,21 @@ function geocodeLatLng(geocoder, map, infowindow, problem, pathName) {
 
 
  function geocodeAddress(geocoder, resultsMap, address, infoWindow, pathName) {
-  //  debugger;
+
    geocoder.geocode({'address': address}, function(results, status) {
-     debugger;
+
      if (status === google.maps.GeocoderStatus.OK) {
        resultsMap.setCenter(results[0].geometry.location);
-      //  debugger;
+
        var marker = new google.maps.Marker({
          map: resultsMap,
          position: results[0].geometry.location
        });
-      //  debugger;
 
        pathName;
        var test = pathName.split("/");
        test.pop();
        var path = test.join("/");
-      //  debugger;
 
        $.ajax({
          method: "PATCH",
