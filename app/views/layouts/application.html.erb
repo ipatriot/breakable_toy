@@ -8,9 +8,14 @@
 </head>
 <body>
 
+    <% if controller.action_name != "new" %>
+      <% if controller.action_name != "edit" %>
+        <% if current_user != nil %>
+          <%= render "layouts/navbar" %>
+        <% end %>
+    <% end %>
+  <% end %>
 
-        <%= render "layouts/navbar" %>
-  
 
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">
