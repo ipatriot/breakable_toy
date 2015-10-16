@@ -16,21 +16,22 @@
 
  */
 /*colores que me gustan #B1311B  #182C42 #128CBD #FFA338 #E84E7F #FFE8F0 #AC18E8 #CFE1FF #4E3F99 #FFC0B6 */
-/* #348AFF  #FF604D #1257B2 #347CFF #FF7CFF #E3E0F6 #f17104 #f19f05 #5c35a4*/
+/* #348AFF  #FF604D #1257B2 #347CFF #FF7CFF #E3E0F6 #f17104 #f19f05 #5c35a4 #FDCF07*/
 
 
 @import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Poiret+One|Karla:400,700|Source+Code+Pro:400,700|Varela|Nixie+One|Love+Ya+Like+A+Sister|The+Girl+Next+Door|Anonymous+Pro:400,700|Codystar|Cutive+Mono|Raleway+Dots|Flamenco|NTR&subset=latin,latin-ext);
-
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
 
 /************** New page, buttons! *******************************/
 
 h1 {
   font-size: 9.5vw;
   font-family: 'Varela', 'Helvetica', sans-serif;
+  margin-top: -0.5vw;
 }
 
 .radio_button{
-  background-color: #f19f05;
+  background-color: #FDCF07;
   height: 50vw;
   padding: 1em;
   border-top: 10px;
@@ -70,11 +71,24 @@ ul {
 
 .button {
   width: 100%;
-  font-size: 4vw;
+  font-size: 9vw;
+  height: 25vw;
+  margin-top: 0vw;
+  margin-bottom: 0vw;
 }
+
 
 .address_text_field {
   width: 100%;
+
+}
+
+.edit_box input{
+  font-family: 'Roboto';
+  font-size: 5vw;
+  padding-top: 7vw;
+  padding-bottom: 7vw;
+  margin: 0px;
 }
 
 .label_edit_field {

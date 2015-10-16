@@ -3,7 +3,7 @@
 function initialize() {
   var mapProp = {
     center:new google.maps.LatLng(42.3518161,-71.0611098),
-    zoom:14,
+    zoom:16,
     mapTypeId:google.maps.MapTypeId.ROADMAP
   };
   var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
@@ -50,7 +50,7 @@ function geocodeLatLng(geocoder, map, infowindow, problem, pathName) {
    geocoder.geocode({'location': latlng}, function(results, status) {
      if (status === google.maps.GeocoderStatus.OK) {
        if (results[1]) {
-         map.setZoom(14);
+         map.setZoom(16);
          var marker = new google.maps.Marker({
            position: latlng,
            map: map

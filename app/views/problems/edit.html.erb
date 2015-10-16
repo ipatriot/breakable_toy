@@ -1,8 +1,7 @@
-<h1>Confirma la dirección o cambia la dirección</h1>
+<!-- <h1>Confirma la dirección o cambia la dirección</h1> -->
 
 <%= form_for @problem do |f| %>
   <div class="edit_box" >
-    <%= f.label :Dirección, class:"label_edit_field" %>
     <%= f.text_field :address, value: @problem.address, class:"address_text_field" %>
   </div>
 
@@ -10,9 +9,5 @@
 <% end %>
 
 <div class="the_map" id="googleMap" style="width:100%;height:66%;"></div>
-
-<a href="/problems/new">New Problem</a>
-
-<br>
 
 <a href="/problems">Problems</a>
