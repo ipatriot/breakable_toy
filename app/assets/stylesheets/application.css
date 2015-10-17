@@ -21,12 +21,13 @@
 
 @import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Poiret+One|Karla:400,700|Source+Code+Pro:400,700|Varela|Nixie+One|Love+Ya+Like+A+Sister|The+Girl+Next+Door|Anonymous+Pro:400,700|Codystar|Cutive+Mono|Raleway+Dots|Flamenco|NTR&subset=latin,latin-ext);
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700|Lato:400,700);
 
 /************** New page, buttons! *******************************/
 
-h1 {
+.title_of_new_page {
   font-size: 9.5vw;
-  font-family: 'Varela', 'Helvetica', sans-serif;
+  font-family: 'Lato', 'Helvetica', sans-serif;
   margin-top: -0.5vw;
 }
 
@@ -63,7 +64,7 @@ ul {
 
 .radio_button label {
   font-size: 6.2vw;
-  font-family: 'Varela', sans-serif;
+  font-family: 'Lato', 'Helvetica', sans-serif;
   color: black;
   line-height: 110%;
 }
@@ -97,19 +98,39 @@ ul {
 
 /************** Index page, info! *******************************/
 .each_problem {
-  background-color: #BAB0FF;
-  border: 10px;
+  background-color: #1257B2;
+  border: 1px solid #000000;
+  margin: .4vw;
 }
 
 .title_of_problem {
-  font-size: 2.2vw;
+  font-size: 1.8vw;
+  text-align: center;
+  padding: 2px;
+}
+
+.title_of_problem a{
+  color: #f17104;
+  text-align: center;
+}
+
+.title_of_problem a:hover{
+  color: #347CFF;
 }
 
 .address_of_problem {
   font-size: 1.4vw;
+  padding: 5px;
+  text-align: center;
 }
 
 .problem-map {
-  width: 18rem;
+  width: 36vw;
   height: 520px;
+}
+
+.title_of_index_page {
+  font-size: 3.3vw;
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  text-align: center;
 }

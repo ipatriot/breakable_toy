@@ -1,7 +1,7 @@
 <div class="row">
-  <div class="medium-4 columns">
+  <div class="medium-3 columns">
 
-    <h1>Problemas</h1>
+    <h1 class="title_of_index_page">Problemas</h1>
 
     <% @problems_to_complete.each do |problem| %>
       <div class="each_problem">
@@ -16,15 +16,15 @@
 
   </div>
 
-  <div class="medium-4 columns">
-    <h1>Mapa</h1>
+  <div class="medium-6 columns">
+    <h1 class="title_of_index_page">Mapa</h1>
     <script src="http://maps.googleapis.com/maps/api/js?<%= ENV['GOOGLE_MAPS_KEY'] %>"></script>
     <div class="the_map problem-map" id="googleMap"></div>
   </div>
 
-  <div class="medium-4 columns">
+  <div class="medium-3 columns">
 
-    <h1>Problemas</h1>
+    <h1 class="title_of_index_page">Problemas</h1>
 
     <% @problems_to_complete.each do |problem| %>
       <div class="each_problem">
