@@ -4,9 +4,7 @@ class ProblemsController < ApplicationController
     before_action :authenticate_user!, except: [:show, :edit, :create, :new, :update]
   def index
     @problems_to_complete = Problem.where(complete = false)
-
     @problems_completed = Problem.where(complete = true)
-
     respond_to do |format|
       format.html
       format.json { render json: @problems_to_complete }
