@@ -8,23 +8,23 @@ un problema del gobierno.
 2.2.1
 
 ## Para empezar
-1. Bundle the gems
+ Bundle the gems
 
   ```Bundle```
 
-2. Bootup the database:
+ Bootup the database:
 
   ```rake db:create```
 
-3. Bring in your migrations
+ Bring in your migrations
 
   ```rake db:migrate```
 
-4. Run the test suite
+ Run the test suite
 
   ```rake```
 
-5. Conseguir una clave del Google Maps API.
+ Conseguir una clave del Google Maps API.
 
 ## Deployment
 On a clean Master branch, run:
