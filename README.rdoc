@@ -1,28 +1,34 @@
-== README
+Una aplicación que llega a reportar de la manera más fácil y sencilla 
+un problema del gobierno. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## La aplicación esta en Heroku
+[Gobierno DF](tuciudad.herokuapp.com)
 
-Things you may want to cover:
+## Ruby version
+2.2.1
 
-* Ruby version
+## Para empezar
+1. Bundle the gems
 
-* System dependencies
+  ```Bundle```
 
-* Configuration
+2. Bootup the database:
 
-* Database creation
+  ```rake db:create```
 
-* Database initialization
+3. Bring in your migrations
 
-* How to run the test suite
+  ```rake db:migrate```
 
-* Services (job queues, cache servers, search engines, etc.)
+4. Run the test suite
 
-* Deployment instructions
+  ```rake```
 
-* ...
+5. Conseguir una clave del Google Maps API.
 
+## Deployment
+On a clean Master branch, run:
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+  ```
+  git push heroku master
+  ```
